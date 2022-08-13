@@ -50,3 +50,8 @@ function playRound(playerSelection, computerSelection)
 }
 
 playRound(playerSelection, computerChoice);
+
+function game()
+{
+    
+}
