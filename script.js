@@ -1,3 +1,12 @@
+// Global Variables
+
+let computerChoice;
+let playerSelection;
+let playerScore;
+let computerScore;
+let playerWin;
+let computerWin;
+
 function getComputerChoice(number)
 {
     if(number == 0){
@@ -10,13 +19,6 @@ function getComputerChoice(number)
         return "Scissors";
     }
 }
-
-let computerChoice;
-let playerSelection;
-let playerScore;
-let computerScore;
-let playerWin;
-let computerWin;
 
 function playRound(playerSelection, computerSelection)
 {
@@ -73,6 +75,8 @@ function playRound(playerSelection, computerSelection)
 
 function game()
 {
+    playerScore = 0;
+    computerScore = 0;
     for(let i = 0; i < 5; i++)
     {
         computerChoice = getComputerChoice(Math.floor(Math.random() * 3));
@@ -86,9 +90,12 @@ function game()
         if(computerWin == 1)
             computerScore++;
 
+        playerWin = 0;
+        computerWin = 0;
+
         console.log("Your Score: " + playerScore);
         console.log("Computer's Score: " + computerScore);
-
+        console.log("\n");
     }
 
     if(playerScore > computerScore)
