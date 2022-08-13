@@ -7,6 +7,8 @@ let computerScore;
 let playerWin;
 let computerWin;
 
+// Helper function to determine computer choice
+
 function getComputerChoice(number)
 {
     if(number == 0){
@@ -19,6 +21,8 @@ function getComputerChoice(number)
         return "Scissors";
     }
 }
+
+// Returns whether user won, lost, or tied with computer
 
 function playRound(playerSelection, computerSelection)
 {
@@ -72,6 +76,8 @@ function playRound(playerSelection, computerSelection)
         return "Invalid choice. You Lose!";
     }
 }
+
+// Runs playRound function five times while showing who wins at the end
 
 function game()
 {
