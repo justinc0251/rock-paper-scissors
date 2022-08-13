@@ -18,12 +18,25 @@ let playerSelection = prompt("Rock, Paper, or Scissors?");
 function playRound(playerSelection, computerSelection)
 {
     if(playerSelection.toLowerCase() == "rock")
+    {
         if(computerChoice == "Scissors")
             return "You Won! Rock beats Scissors";
         else if(computerChoice == "Paper")
             return "You Lose! Paper beats Rock";
         else
             return "Tie!";
+    }
+
+    if(playerSelection.toLowerCase() == "paper")
+    {
+        if(computerChoice == "Scissors")
+            return "You Lose! Scissors beats Paper";
+        else if(computerChoice == "Paper")
+            return "Tie!";
+        else
+            return "You Won! Rock beats Paper";
+    }
+
 }
 
 playRound(playerSelection, computerChoice);
