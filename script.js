@@ -37,6 +37,16 @@ function playRound(playerSelection, computerSelection)
             return "You Won! Rock beats Paper";
     }
 
+    if(playerSelection.toLowerCase() == "scissors")
+    {
+        if(computerChoice == "Scissors")
+            return "Tie!";
+        else if(computerChoice == "Paper")
+            return "You Won! Scissors beats Rock";
+        else
+            return "You Lose! Rock beats Scissors";
+    }
+
 }
 
 playRound(playerSelection, computerChoice);
