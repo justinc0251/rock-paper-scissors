@@ -12,7 +12,6 @@ function getComputerChoice(number)
 }
 
 let computerChoice = getComputerChoice(Math.floor(Math.random() * 3));
-
 let playerSelection = prompt("Rock, Paper, or Scissors?");
 
 function playRound(playerSelection, computerSelection)
@@ -34,7 +33,7 @@ function playRound(playerSelection, computerSelection)
         else if(computerChoice == "Paper")
             return "Tie!";
         else
-            return "You Won! Rock beats Paper";
+            return "You Won! Paper beats Rock";
     }
 
     if(playerSelection.toLowerCase() == "scissors")
@@ -49,9 +48,4 @@ function playRound(playerSelection, computerSelection)
 
 }
 
-playRound(playerSelection, computerChoice);
-
-function game()
-{
-    
-}
+console.log(playRound(playerSelection, computerChoice));
