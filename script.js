@@ -86,6 +86,9 @@ function game()
         if(computerWin == 1)
             computerScore++;
 
+        console.log("Your Score: " + playerScore);
+        console.log("Computer's Score: " + computerScore);
+
     }
 
     if(playerScore > computerScore)
