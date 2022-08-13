@@ -26,12 +26,12 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerChoice == "Scissors")
         {
-            playerWin = 1;
+            playerWin = true;
             return "You Won! Rock beats Scissors";
         }
         else if(computerChoice == "Paper")
         {
-            computerWin = 1;
+            computerWin = true;
             return "You Lose! Paper beats Rock";
         }
         else
@@ -42,14 +42,14 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerChoice == "Scissors")
         {
-            computerWin = 1;
+            computerWin = true;
             return "You Lose! Scissors beats Paper";
         }
         else if(computerChoice == "Paper")
             return "Tie!";
         else
         {
-            playerWin = 1;
+            playerWin = true;
             return "You Won! Paper beats Rock";
         }
     }
@@ -60,12 +60,12 @@ function playRound(playerSelection, computerSelection)
             return "Tie!";
         else if(computerChoice == "Paper")
         {
-            playerWin = 1;
+            playerWin = true;
             return "You Won! Scissors beats Rock";
         }
         else
         {
-            computerWin = 1;
+            computerWin = true;
             return "You Lose! Rock beats Scissors";
         }
     } else {
@@ -85,13 +85,14 @@ function game()
         console.log("Computer picks " + computerChoice);
 
         console.log(playRound(playerSelection, computerChoice));
-        if(playerWin == 1)
+
+        if(playerWin == true)
             playerScore++;
-        if(computerWin == 1)
+        if(computerWin == true)
             computerScore++;
 
-        playerWin = 0;
-        computerWin = 0;
+        playerWin = false;
+        computerWin = false;
 
         console.log("Your Score: " + playerScore);
         console.log("Computer's Score: " + computerScore);
