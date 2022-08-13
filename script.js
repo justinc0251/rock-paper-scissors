@@ -11,8 +11,8 @@ function getComputerChoice(number)
     }
 }
 
-let computerChoice = getComputerChoice(Math.floor(Math.random() * 3));
-let playerSelection = prompt("Rock, Paper, or Scissors?");
+let computerChoice;
+let playerSelection;
 
 function playRound(playerSelection, computerSelection)
 {
@@ -45,13 +45,16 @@ function playRound(playerSelection, computerSelection)
         else
             return "You Lose! Rock beats Scissors";
     }
-
 }
 
 function game()
 {
     for(let i = 0; i < 5; i++)
     {
+        computerChoice = getComputerChoice(Math.floor(Math.random() * 3));
+        playerSelection = prompt("Rock, Paper, or Scissors?");
         console.log(playRound(playerSelection, computerChoice));
     }
 }
+
+game();
