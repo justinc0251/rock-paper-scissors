@@ -9,8 +9,9 @@ let computerWin;
 
 // Helper function to determine computer choice
 
-function getComputerChoice(number)
+function getComputerChoice()
 {
+    let random = Math.floor(Math.random() * 3);
     if(number == 0){
         return "Rock";
     }
@@ -80,10 +81,9 @@ function playRound(playerSelection, computerSelection)
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        playRound(button.id, getComputerChoice(Math.floor(Math.random() * 3)));
+        playRound(button.id, getComputerChoice());
     })
 })
-
 
 
 // Runs playRound function five times while showing who wins at the end
