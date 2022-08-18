@@ -81,6 +81,18 @@ const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
 
+rock.addEventListener('click', () => {
+    playRound("rock", getComputerChoice(Math.floor(Math.random() * 3)));
+})
+
+paper.addEventListener('click', () => {
+    playRound("paper", getComputerChoice(Math.floor(Math.random() * 3)));
+})
+
+scissors.addEventListener('click', () => {
+    playRound("scissors", getComputerChoice(Math.floor(Math.random() * 3)));
+})
+
 
 // Runs playRound function five times while showing who wins at the end
 /*
