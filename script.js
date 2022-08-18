@@ -39,7 +39,7 @@ function playRound(playerSelection, computerSelection)
             return "You Lose! Paper beats Rock";
         }
         else
-            return "Tie!";
+            return "Tie!"; 
     }
 
     else if(playerSelection.toLowerCase() == "paper")
@@ -77,8 +77,13 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
-// Runs playRound function five times while showing who wins at the end
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
 
+
+// Runs playRound function five times while showing who wins at the end
+/*
 function game()
 {
     playerScore = 0;
@@ -114,3 +119,4 @@ function game()
 }
 
 game();
+*/
