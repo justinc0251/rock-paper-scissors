@@ -1,11 +1,11 @@
 // Global Variables
 
-let computerChoice;
-let playerSelection;
-let playerScore;
-let computerScore;
-let playerWin;
-let computerWin;
+let computerChoice = '';
+let playerSelection = '';
+let playerScore = 0;
+let computerScore = 0;
+let playerWin = false;
+let computerWin = false;
 
 // Helper function to determine computer choice
 
