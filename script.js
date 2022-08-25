@@ -1,7 +1,5 @@
 // Global Variables
 
-let computerChoice = '';
-let playerSelection = '';
 let playerScore = 0;
 let computerScore = 0;
 let playerWin = false;
@@ -12,19 +10,19 @@ function getComputerChoice()
 {
     let random = Math.floor(Math.random() * 3);
     if(random === 0){
-        return "Rock";
+        return "rock";
     }
     else if(random === 1){
-        return "Paper";
+        return "paper";
     }
     else{
-        return "Scissors";
+        return "scissors";
     }
 }
 
 // Returns whether user won, lost, or tied with computer
 
-function playRound(playerSelection, computerSelection)
+function playRound(playerSelection, computerChoice)
 {
     if(playerSelection.toLowerCase() == "rock")
     {
@@ -75,11 +73,19 @@ function playRound(playerSelection, computerSelection)
     }
 }
 
+
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
-        playRound(button.id, getComputerChoice());
+        game(button.id);
     })
 })
 
+function game(playerSelection)
+{
+    const computerChoice = getComputerChoice();
+    playRound(playerSelection, computerChoice);
+}
+
 const results = document.getElementById("results");
+
