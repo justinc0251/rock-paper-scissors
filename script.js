@@ -5,17 +5,16 @@ let playerSelection = '';
 let playerScore = 0;
 let computerScore = 0;
 let playerWin = false;
-let computerWin = false;
 
 // Helper function to determine computer choice
 
 function getComputerChoice()
 {
     let random = Math.floor(Math.random() * 3);
-    if(number == 0){
+    if(random === 0){
         return "Rock";
     }
-    else if(number == 1){
+    else if(random === 1){
         return "Paper";
     }
     else{
@@ -36,7 +35,7 @@ function playRound(playerSelection, computerSelection)
         }
         else if(computerChoice == "Paper")
         {
-            computerWin = true;
+            playerWin = false;
             return "You Lose! Paper beats Rock";
         }
         else
@@ -47,7 +46,7 @@ function playRound(playerSelection, computerSelection)
     {
         if(computerChoice == "Scissors")
         {
-            computerWin = true;
+            playerWin = false;
             return "You Lose! Scissors beats Paper";
         }
         else if(computerChoice == "Paper")
@@ -70,7 +69,7 @@ function playRound(playerSelection, computerSelection)
         }
         else
         {
-            computerWin = true;
+            playerWin = false;
             return "You Lose! Rock beats Scissors";
         }
     } else {
@@ -84,43 +83,3 @@ buttons.forEach((button) => {
         playRound(button.id, getComputerChoice());
     })
 })
-
-
-// Runs playRound function five times while showing who wins at the end
-/*
-function game()
-{
-    playerScore = 0;
-    computerScore = 0;
-    for(let i = 0; i < 5; i++)
-    {
-        computerChoice = getComputerChoice(Math.floor(Math.random() * 3));
-        playerSelection = prompt("Rock, Paper, or Scissors?");
-
-        console.log("Computer picks " + computerChoice);
-
-        console.log(playRound(playerSelection, computerChoice));
-
-        if(playerWin == true)
-            playerScore++;
-        if(computerWin == true)
-            computerScore++;
-
-        playerWin = false;
-        computerWin = false;
-
-        console.log("Your Score: " + playerScore);
-        console.log("Computer's Score: " + computerScore);
-        console.log("\n");
-    }
-
-    if(playerScore > computerScore)
-        console.log("You won!");
-    if(computerScore > playerScore)
-        console.log("You lost!");
-    else
-        console.log("You tied!");
-}
-
-game();
-*/
