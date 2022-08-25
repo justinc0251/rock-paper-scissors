@@ -31,15 +31,15 @@ function playRound(playerSelection, computerSelection)
         if(computerChoice == "Scissors")
         {
             playerWin = true;
-            return "You Won! Rock beats Scissors";
         }
         else if(computerChoice == "Paper")
         {
             playerWin = false;
-            return "You Lose! Paper beats Rock";
         }
         else
-            return "Tie!"; 
+        {
+            playerWin = 'tie';
+        }
     }
 
     else if(playerSelection.toLowerCase() == "paper")
@@ -47,33 +47,31 @@ function playRound(playerSelection, computerSelection)
         if(computerChoice == "Scissors")
         {
             playerWin = false;
-            return "You Lose! Scissors beats Paper";
         }
         else if(computerChoice == "Paper")
-            return "Tie!";
+        {
+            playerWin = 'tie';
+        }
         else
         {
             playerWin = true;
-            return "You Won! Paper beats Rock";
         }
     }
 
     else if(playerSelection.toLowerCase() == "scissors")
     {
         if(computerChoice == "Scissors")
-            return "Tie!";
+        {
+            playerWin = 'tie';
+        }
         else if(computerChoice == "Paper")
         {
             playerWin = true;
-            return "You Won! Scissors beats Rock";
         }
         else
         {
             playerWin = false;
-            return "You Lose! Rock beats Scissors";
         }
-    } else {
-        return "Invalid choice. You Lose!";
     }
 }
 
@@ -83,3 +81,5 @@ buttons.forEach((button) => {
         playRound(button.id, getComputerChoice());
     })
 })
+
+const results = document.getElementById("results");
