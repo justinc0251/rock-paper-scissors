@@ -82,11 +82,15 @@ buttons.forEach((button) => {
 })
 
 const results = document.getElementById("results");
+const displayPlayer = document.getElementById("player");
+const displayComputer = document.getElementById("computer");
 
 
 function game(playerSelection)
 {
     const computerChoice = getComputerChoice();
+    displayPlayer.textContent = `Player: ${capitalizeFirstLetter(playerSelection)}`;
+    displayComputer.textContent = `Computer: ${capitalizeFirstLetter(computerChoice)}`;
     playRound(playerSelection, computerChoice);
     displayWinner(playerSelection, computerChoice);
 
@@ -95,6 +99,7 @@ function game(playerSelection)
 function capitalizeFirstLetter(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
 
 function displayWinner(playerSelection, computerChoice){
     if(roundWin === 'player')
