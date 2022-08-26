@@ -88,23 +88,25 @@ function game(playerSelection)
 {
     const computerChoice = getComputerChoice();
     playRound(playerSelection, computerChoice);
-    if(roundWin === 'player')
-    {
-        results.textContent = `You won! ${playerSelection.toUpperCase} beats ${computerChoice}`;
-    }
-    if(roundWin === 'computer')
-    {
-        results.textContent = `You lost! ${computerChoice} beats ${playerSelection}`;
-    }
-    if(roundWin === 'tie')
-    {
-        results.textContent = `You tied! ${computerChoice} ties with ${playerSelection}`;
-    }
+    displayWinner(playerSelection, computerChoice);
 
 }
 
-function capitalizeFirstLetter(string) {
+function capitalizeFirstLetter(string){
     return string.charAt(0).toUpperCase() + string.slice(1);
-  }
+}
 
-
+function displayWinner(playerSelection, computerChoice){
+    if(roundWin === 'player')
+    {
+        results.textContent = `You won! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerChoice)}`;
+    }
+    if(roundWin === 'computer')
+    {
+        results.textContent = `You lost! ${capitalizeFirstLetter(computerChoice)} beats ${capitalizeFirstLetter(playerSelection)}`;
+    }
+    if(roundWin === 'tie')
+    {
+        results.textContent = `You tied! ${capitalizeFirstLetter(computerChoice)} ties with ${capitalizeFirstLetter(playerSelection)}`;
+    }
+}
