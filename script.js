@@ -1,8 +1,8 @@
 // Global Variables
 
+let roundWin = '';
 let playerScore = 0;
 let computerScore = 0;
-let playerWin = false;
 
 // Helper function to determine computer choice
 
@@ -24,51 +24,51 @@ function getComputerChoice()
 
 function playRound(playerSelection, computerChoice)
 {
-    if(playerSelection.toLowerCase() == "rock")
+    if(playerSelection == "rock")
     {
-        if(computerChoice == "Scissors")
+        if(computerChoice == "scissors")
         {
-            playerWin = true;
+            roundWin = 'player';
         }
-        else if(computerChoice == "Paper")
+        else if(computerChoice == "paper")
         {
-            playerWin = false;
+            roundWin = 'computer';
         }
         else
         {
-            playerWin = 'tie';
+            roundWin = 'tie';
         }
     }
 
-    else if(playerSelection.toLowerCase() == "paper")
+    if(playerSelection == "paper")
     {
-        if(computerChoice == "Scissors")
+        if(computerChoice == "scissors")
         {
-            playerWin = false;
+            roundWin = 'computer';
         }
-        else if(computerChoice == "Paper")
+        else if(computerChoice == "paper")
         {
-            playerWin = 'tie';
+            roundWin = 'tie';
         }
         else
         {
-            playerWin = true;
+            roundWin = 'player';
         }
     }
 
-    else if(playerSelection.toLowerCase() == "scissors")
+    if(playerSelection === "scissors")
     {
-        if(computerChoice == "Scissors")
+        if(computerChoice === "scissors")
         {
-            playerWin = 'tie';
+            roundWin = 'tie';
         }
-        else if(computerChoice == "Paper")
+        else if(computerChoice == "paper")
         {
-            playerWin = true;
+            roundWin = 'player';
         }
         else
         {
-            playerWin = false;
+            roundWin = 'computer';
         }
     }
 }
@@ -81,11 +81,25 @@ buttons.forEach((button) => {
     })
 })
 
+const results = document.getElementById("results");
+
 function game(playerSelection)
 {
     const computerChoice = getComputerChoice();
     playRound(playerSelection, computerChoice);
+    if(roundWin === 'player')
+    {
+        results.textContent = 'You won!';
+    }
+    if(roundWin === 'computer')
+    {
+        results.textContent = 'You lost!';
+    }
+    if(roundWin === 'tie')
+    {
+        results.textContent = 'You tied!';
+    }
+
 }
 
-const results = document.getElementById("results");
 
