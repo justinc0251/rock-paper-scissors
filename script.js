@@ -24,14 +24,14 @@ function getComputerChoice()
 
 function playRound(playerSelection, computerChoice)
 {
-    if(playerSelection == "rock")
+    if(playerSelection === "rock")
     {
-        if(computerChoice == "scissors")
+        if(computerChoice === "scissors")
         {
             roundWin = 'player';
             playerScore++;
         }
-        else if(computerChoice == "paper")
+        else if(computerChoice === "paper")
         {
             roundWin = 'computer';
             computerScore++;
@@ -42,14 +42,14 @@ function playRound(playerSelection, computerChoice)
         }
     }
 
-    if(playerSelection == "paper")
+    if(playerSelection === "paper")
     {
-        if(computerChoice == "scissors")
+        if(computerChoice === "scissors")
         {
             roundWin = 'computer';
             computerScore++;
         }
-        else if(computerChoice == "paper")
+        else if(computerChoice === "paper")
         {
             roundWin = 'tie';
         }
@@ -66,7 +66,7 @@ function playRound(playerSelection, computerChoice)
         {
             roundWin = 'tie';
         }
-        else if(computerChoice == "paper")
+        else if(computerChoice ==="paper")
         {
             roundWin = 'player';
             playerScore++;
