@@ -29,10 +29,12 @@ function playRound(playerSelection, computerChoice)
         if(computerChoice == "scissors")
         {
             roundWin = 'player';
+            playerScore++;
         }
         else if(computerChoice == "paper")
         {
             roundWin = 'computer';
+            computerScore++;
         }
         else
         {
@@ -45,6 +47,7 @@ function playRound(playerSelection, computerChoice)
         if(computerChoice == "scissors")
         {
             roundWin = 'computer';
+            computerScore++;
         }
         else if(computerChoice == "paper")
         {
@@ -53,6 +56,7 @@ function playRound(playerSelection, computerChoice)
         else
         {
             roundWin = 'player';
+            playerScore++;
         }
     }
 
@@ -65,10 +69,12 @@ function playRound(playerSelection, computerChoice)
         else if(computerChoice == "paper")
         {
             roundWin = 'player';
+            playerScore++;
         }
         else
         {
             roundWin = 'computer';
+            computerScore++;
         }
     }
 }
@@ -108,10 +114,10 @@ function displayWinner(playerSelection, computerChoice){
     }
     if(roundWin === 'computer')
     {
-        results.textContent = `You lost! ${capitalizeFirstLetter(computerChoice)} beats ${capitalizeFirstLetter(playerSelection)}`;
+        results.textContent = `You lost! ${capitalizeFirstLetter(playerSelection)} loses to ${capitalizeFirstLetter(computerChoice)}`;
     }
     if(roundWin === 'tie')
     {
-        results.textContent = `You tied! ${capitalizeFirstLetter(computerChoice)} ties with ${capitalizeFirstLetter(playerSelection)}`;
+        results.textContent = `You tied! ${capitalizeFirstLetter(playerSelection)} ties with ${capitalizeFirstLetter(computerChoice)}`;
     }
 }
