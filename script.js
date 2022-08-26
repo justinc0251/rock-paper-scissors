@@ -73,7 +73,7 @@ function playRound(playerSelection, computerChoice)
     }
 }
 
-
+// Click listeners for group of button nodes
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) => {
     button.addEventListener('click', () => {
@@ -83,23 +83,28 @@ buttons.forEach((button) => {
 
 const results = document.getElementById("results");
 
+
 function game(playerSelection)
 {
     const computerChoice = getComputerChoice();
     playRound(playerSelection, computerChoice);
     if(roundWin === 'player')
     {
-        results.textContent = 'You won!';
+        results.textContent = `You won! ${playerSelection.toUpperCase} beats ${computerChoice}`;
     }
     if(roundWin === 'computer')
     {
-        results.textContent = 'You lost!';
+        results.textContent = `You lost! ${computerChoice} beats ${playerSelection}`;
     }
     if(roundWin === 'tie')
     {
-        results.textContent = 'You tied!';
+        results.textContent = `You tied! ${computerChoice} ties with ${playerSelection}`;
     }
 
 }
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
 
 
