@@ -72,6 +72,7 @@ restartButton.addEventListener("click", () => {
   computerScore = 0;
   scorePlayer.textContent = "Player: 0";
   scoreComputer.textContent = "Computer: 0";
+  results.textContent = "Good Luck!";
 });
 
 const results = document.getElementById("results");
@@ -86,22 +87,17 @@ function game(playerSelection) {
   displayPlayer.textContent = `Player: ${capitalizeFirstLetter(playerSelection)}`;
   displayComputer.textContent = `Computer: ${capitalizeFirstLetter(computerChoice)}`;
   playRound(playerSelection, computerChoice);
-  displayWinner(playerSelection, computerChoice);
+  displayRoundWinner(playerSelection, computerChoice);
   scorePlayer.textContent = `Player: ${playerScore}`;
   scoreComputer.textContent = `Computer: ${computerScore}`;
-  if (playerScore == 5) {
-    scoreInfo.textContent = "Congratulations! You Won!";
-  }
-  if (computerScore == 5) {
-    scoreInfo.textContent = "You Lost :( Try Again!";
-  }
+  displayWinner(playerScore, computerScore);
 }
 
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
-function displayWinner(playerSelection, computerChoice) {
+function displayRoundWinner(playerSelection, computerChoice) {
   if (roundWin === "player") {
     results.textContent = `You won! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerChoice)}`;
   }
@@ -110,5 +106,14 @@ function displayWinner(playerSelection, computerChoice) {
   }
   if (roundWin === "tie") {
     results.textContent = `You tied! ${capitalizeFirstLetter(playerSelection)} ties with ${capitalizeFirstLetter(computerChoice)}`;
+  }
+}
+
+function displayWinner(playerScore, computerScore) {
+  if (playerScore == 5) {
+    scoreInfo.textContent = "Congratulations! You Won!";
+  }
+  if (computerScore == 5) {
+    scoreInfo.textContent = "You Lost :( Try Again!";
   }
 }
