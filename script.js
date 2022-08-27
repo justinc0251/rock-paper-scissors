@@ -58,11 +58,20 @@ function playRound(playerSelection, computerChoice) {
 }
 
 // Click listeners for group of button nodes
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll(".selection");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     game(button.id);
   });
+});
+
+const restartButton = document.querySelector("#restart");
+restartButton.addEventListener("click", () => {
+  scoreInfo.textContent = "First to Five Wins!";
+  playerScore = 0;
+  computerScore = 0;
+  scorePlayer.textContent = "Player: 0";
+  scoreComputer.textContent = "Computer: 0";
 });
 
 const results = document.getElementById("results");
@@ -80,6 +89,12 @@ function game(playerSelection) {
   displayWinner(playerSelection, computerChoice);
   scorePlayer.textContent = `Player: ${playerScore}`;
   scoreComputer.textContent = `Computer: ${computerScore}`;
+  if (playerScore == 5) {
+    scoreInfo.textContent = "Congratulations! You Won!";
+  }
+  if (computerScore == 5) {
+    scoreInfo.textContent = "You Lost :( Try Again!";
+  }
 }
 
 function capitalizeFirstLetter(string) {

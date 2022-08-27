@@ -1,4 +1,14 @@
-.choice, .score{
-    display:flex;
-    gap: 20px;
+.choice,
+.score {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+body {
+  text-align: center;
+}
+
+button {
+    margin: 10px 5px;
 }
