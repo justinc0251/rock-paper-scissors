@@ -61,6 +61,10 @@ function playRound(playerSelection, computerChoice) {
 const buttons = document.querySelectorAll(".selection");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
+    if(playerScore == 5 || computerScore == 5)
+    {
+      return;
+    }
     game(button.id);
   });
 });
