@@ -74,12 +74,8 @@ const scoreInfo = document.getElementById("score-info");
 
 function game(playerSelection) {
   const computerChoice = getComputerChoice();
-  displayPlayer.textContent = `Player: ${capitalizeFirstLetter(
-    playerSelection
-  )}`;
-  displayComputer.textContent = `Computer: ${capitalizeFirstLetter(
-    computerChoice
-  )}`;
+  displayPlayer.textContent = `Player: ${capitalizeFirstLetter(playerSelection)}`;
+  displayComputer.textContent = `Computer: ${capitalizeFirstLetter(computerChoice)}`;
   playRound(playerSelection, computerChoice);
   displayWinner(playerSelection, computerChoice);
   scorePlayer.textContent = `Player: ${playerScore}`;
@@ -92,18 +88,12 @@ function capitalizeFirstLetter(string) {
 
 function displayWinner(playerSelection, computerChoice) {
   if (roundWin === "player") {
-    results.textContent = `You won! ${capitalizeFirstLetter(
-      playerSelection
-    )} beats ${capitalizeFirstLetter(computerChoice)}`;
+    results.textContent = `You won! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerChoice)}`;
   }
   if (roundWin === "computer") {
-    results.textContent = `You lost! ${capitalizeFirstLetter(
-      playerSelection
-    )} loses to ${capitalizeFirstLetter(computerChoice)}`;
+    results.textContent = `You lost! ${capitalizeFirstLetter(playerSelection)} loses to ${capitalizeFirstLetter(computerChoice)}`;
   }
   if (roundWin === "tie") {
-    results.textContent = `You tied! ${capitalizeFirstLetter(
-      playerSelection
-    )} ties with ${capitalizeFirstLetter(computerChoice)}`;
+    results.textContent = `You tied! ${capitalizeFirstLetter(playerSelection)} ties with ${capitalizeFirstLetter(computerChoice)}`;
   }
 }
