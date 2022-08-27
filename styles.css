@@ -5,10 +5,32 @@
   justify-content: center;
 }
 
+h1,
 body {
-  text-align: center;
+  margin: 0;
 }
 
-button {
-    margin: 10px 5px;
+body {
+  text-align: center;
+  background-color: lightcyan;
+  font-family: Helvetica, sans-serif;
+}
+
+h4 {
+  margin: 5px 10px 0 0;
+}
+
+.selection {
+  margin: 10px 5px;
+}
+
+header {
+  margin-bottom: 10px;
+  background-color: rgb(197, 233, 245);
+  padding: 10px;
+}
+
+img {
+    height: 50px;
+    width: auto;
 }
