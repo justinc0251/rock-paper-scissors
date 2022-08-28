@@ -61,8 +61,7 @@ function playRound(playerSelection, computerChoice) {
 const buttons = document.querySelectorAll(".selection");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
-    if(playerScore == 5 || computerScore == 5)
-    {
+    if (playerScore == 5 || computerScore == 5) {
       return;
     }
     game(button.id);
@@ -88,12 +87,10 @@ const scoreInfo = document.getElementById("score-info");
 
 function game(playerSelection) {
   const computerChoice = getComputerChoice();
-  displayPlayer.textContent = `Player: ${capitalizeFirstLetter(playerSelection)}`;
-  displayComputer.textContent = `Computer: ${capitalizeFirstLetter(computerChoice)}`;
+  displayChoice(playerSelection, computerChoice);
   playRound(playerSelection, computerChoice);
   displayRoundWinner(playerSelection, computerChoice);
-  scorePlayer.textContent = `Player: ${playerScore}`;
-  scoreComputer.textContent = `Computer: ${computerScore}`;
+  displayScore(playerScore, computerScore);
   displayWinner(playerScore, computerScore);
 }
 
@@ -111,6 +108,16 @@ function displayRoundWinner(playerSelection, computerChoice) {
   if (roundWin === "tie") {
     results.textContent = `You tied! ${capitalizeFirstLetter(playerSelection)} ties with ${capitalizeFirstLetter(computerChoice)}`;
   }
+}
+
+function displayChoice(playerSelection, computerChoice) {
+  displayPlayer.textContent = `Player: ${capitalizeFirstLetter(playerSelection)}`;
+  displayComputer.textContent = `Computer: ${capitalizeFirstLetter(computerChoice)}`;
+}
+
+function displayScore(playerScore, copmuterScore) {
+  scorePlayer.textContent = `Player: ${playerScore}`;
+  scoreComputer.textContent = `Computer: ${computerScore}`;
 }
 
 function displayWinner(playerScore, computerScore) {
