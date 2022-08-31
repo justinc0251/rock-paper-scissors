@@ -17,7 +17,7 @@ function getComputerChoice() {
   }
 }
 
-// Returns whether user won, lost, or tied with computer
+// Returns whether user won, lost, or tied with computer and increments score based on winner
 
 function playRound(playerSelection, computerChoice) {
   if (playerSelection === "rock") {
@@ -57,7 +57,7 @@ function playRound(playerSelection, computerChoice) {
   }
 }
 
-// Click listeners for group of button nodes
+// Click listeners for group of button nodes, returns nothing if player or computer already reached 5 points
 const buttons = document.querySelectorAll(".selection");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -68,6 +68,7 @@ buttons.forEach((button) => {
   });
 });
 
+// Restart button to reset scores and apply default messages
 const restartButton = document.querySelector("#restart");
 restartButton.addEventListener("click", () => {
   scoreInfo.textContent = "First to Five Wins!";
@@ -78,6 +79,7 @@ restartButton.addEventListener("click", () => {
   results.textContent = "Good Luck!";
 });
 
+// Get elements from html file
 const results = document.getElementById("results");
 const displayPlayer = document.getElementById("player");
 const displayComputer = document.getElementById("computer");
@@ -94,10 +96,12 @@ function game(playerSelection) {
   displayWinner(playerScore, computerScore);
 }
 
+// Capitalize first letter helper function
 function capitalizeFirstLetter(string) {
   return string.charAt(0).toUpperCase() + string.slice(1);
 }
 
+// Helper function to show who won in the round
 function displayRoundWinner(playerSelection, computerChoice) {
   if (roundWin === "player") {
     results.textContent = `You won! ${capitalizeFirstLetter(playerSelection)} beats ${capitalizeFirstLetter(computerChoice)}`;
@@ -110,16 +114,19 @@ function displayRoundWinner(playerSelection, computerChoice) {
   }
 }
 
+// Helper function to show what the player and computer picked
 function displayChoice(playerSelection, computerChoice) {
   displayPlayer.textContent = `Player: ${capitalizeFirstLetter(playerSelection)}`;
   displayComputer.textContent = `Computer: ${capitalizeFirstLetter(computerChoice)}`;
 }
 
+// Helper function to show the player and computer score
 function displayScore(playerScore, copmuterScore) {
   scorePlayer.textContent = `Player: ${playerScore}`;
   scoreComputer.textContent = `Computer: ${computerScore}`;
 }
 
+// Helper function to display who got to five points first
 function displayWinner(playerScore, computerScore) {
   if (playerScore == 5) {
     scoreInfo.textContent = "Congratulations! You Won!";
